@@ -363,13 +363,13 @@
 
 <header class="site-header">
   <div class="logo">AUTO <span>GUADELOUPE</span></div>
-  <div class="header-badge">TOUR 2026</div>
+  <div class="header-badge">OFRRE DU TOUR 2026</div>
 </header>
 
 <section class="hero">
   <span class="eyebrow">TOUR CYCLISTE INTERNATIONAL DE LA GUADELOUPE</span>
-  <h1>Vous l'avez vu passer.<br>Trouvez-le au <em>tarif Tour</em>.</h1>
-  <p class="sub">Repérez le véhicule aperçu sur la caravane ou le long de l'étape, et obtenez le tarif spécial réservé aux spectateurs du Tour — en 3 étapes, depuis votre téléphone.</p>
+  <h1>Un véhicule du Tour vous intéresse ?.<br>Profitez des <em>tarifs Tour 2026.</em>.</h1>
+  <p class="sub">Un véhicule de la caravane du Tour vous a tapé dans l’œil ? Découvrez son tarif spécial Tour et réservez-le dès aujourd’hui ! — en 3 étapes, depuis votre téléphone.</p>
 </section>
 
 <div class="route-wrap">
@@ -392,7 +392,7 @@
 
   <!-- STEP 1 : BRAND -->
   <div class="card" id="step1">
-    <h2><span class="num">1</span>Quelle marque avez-vous vue dans le Tour ?</h2>
+    <h2><span class="num">1</span> Quelle est la marque du véhicule que vous souhaitez ?</h2>
     <div class="brand-grid" id="brandGrid"></div>
   </div>
 
@@ -453,7 +453,7 @@
   <div class="card success" id="successCard" hidden>
     <div class="check">✓</div>
     <h2 id="successTitle">Demande envoyée</h2>
-    <p id="successText">Merci ! Un conseiller Auto Guadeloupe vous recontacte sous 24h ouvrées.</p>
+    <p id="successText">Merci ! Un conseiller Auto Guadeloupe vous recontacte au sujet de votre demande.</p>
     <button class="back-link" id="restartBtn" style="margin-top:14px;">Faire une nouvelle demande</button>
   </div>
 
@@ -461,7 +461,7 @@
 
 <footer>
   <div class="fname">AUTO GUADELOUPE</div>
-  Offre valable pendant le Tour Cycliste International de la Guadeloupe 2026, dans la limite des stocks disponibles.<br>
+  Offre valable uniquement du 01/08/2026 au 09/08/2026 à l'occasion du Tour Cycliste International de la Guadeloupe 2026, dans la limite des stocks disponibles.<br>
   Photos et tarifs non contractuels — sous réserve de disponibilité chez nos concessions partenaires.
 </footer>
 
@@ -473,26 +473,47 @@
    priceNormal = prix catalogue, priceTour = prix spécial spectateurs du Tour
    ========================================================================= */
 const BRANDS = [
-  { id:'renault', name:'Renault', models:[
-      { name:'Clio',    priceNormal:'17 900 €', priceTour:'16 490 €' },
-      { name:'Captur',  priceNormal:'24 200 €', priceTour:'22 690 €' },
-      { name:'Austral', priceNormal:'32 500 €', priceTour:'30 400 €' },
-  ]},
-  { id:'dacia', name:'Dacia', models:[
-      { name:'Sandero', priceNormal:'14 200 €', priceTour:'12 990 €' },
-      { name:'Duster',  priceNormal:'19 800 €', priceTour:'18 290 €' },
-      { name:'Jogger',  priceNormal:'20 900 €', priceTour:'19 390 €' },
-  ]},
   { id:'peugeot', name:'Peugeot', models:[
-      { name:'208',  priceNormal:'19 900 €', priceTour:'18 390 €' },
-      { name:'2008', priceNormal:'26 400 €', priceTour:'24 690 €' },
-      { name:'3008', priceNormal:'34 900 €', priceTour:'32 590 €' },
+      { name:'208',    priceNormal:'17 900 €', priceTour:'16 490 €' },
+      { name:'2008',  priceNormal:'24 200 €', priceTour:'22 690 €' },
+      { name:'3008', priceNormal:'32 500 €', priceTour:'30 400 €' },
   ]},
-  { id:'toyota', name:'Toyota', models:[
-      { name:'Yaris',   priceNormal:'21 300 €', priceTour:'19 890 €' },
-      { name:'Yaris Cross', priceNormal:'27 100 €', priceTour:'25 290 €' },
-      { name:'RAV4',    priceNormal:'39 900 €', priceTour:'37 190 €' },
+  { id:'citroën', name:'Citroën', models:[
+      { name:'C3 new', priceNormal:'14 200 €', priceTour:'12 990 €' },
+      { name:'C3 Aircross new',  priceNormal:'19 800 €', priceTour:'18 290 €' },
+      { name:'C5 Aircross new',  priceNormal:'20 900 €', priceTour:'19 390 €' },
+      { name:'C3 Aircross ancienne génération',  priceNormal:'20 900 €', priceTour:'19 390 €' },
   ]},
+  { id:'fiat', name:'Fiat', models:[
+      { name:'Pandina',  priceNormal:'19 900 €', priceTour:'18 390 €' },
+      { name:'Grande Panda', priceNormal:'26 400 €', priceTour:'24 690 €' },
+  ]},
+  { id:'jeep', name:'Jeep', models:[
+      { name:'Avenger',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+      { name:'Avenger toit ouvrant', priceNormal:'27 100 €', priceTour:'25 290 €' },
+  ]},
+  { id:'leap motor', name:'Leap Motor', models:[
+      { name:'B10',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+      { name:'C10', priceNormal:'27 100 €', priceTour:'25 290 €' }, 
+  ]},
+  { id:'ds automobiles', name:'DS Automobiles', models:[
+      { name:'DS7',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+  ]},
+  { id:'alfa romeo', name:'Alfa Romeo', models:[
+      { name:'Junior',   priceNormal:'21 300 €', priceTour:'19 890 €' },  
+  ]},
+  { id:'kia', name:'Kia', models:[
+      { name:'Stonic',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+      { name:'Sportage', priceNormal:'27 100 €', priceTour:'25 290 €' },
+      { name:'EV2', priceNormal:'27 100 €', priceTour:'25 290 €' },
+  ]},
+  { id:'mg', name:'MG', models:[
+      { name:'EHS',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+      { name:'ZS', priceNormal:'27 100 €', priceTour:'25 290 €' },
+]},
+  { id:'maxus', name:'Maxus', models:[
+      { name:'T90',   priceNormal:'21 300 €', priceTour:'19 890 €' },
+      { name:'T60', priceNormal:'27 100 €', priceTour:'25 290 €' },
 ];
 
 /* Position (en % de la largeur du chemin SVG) de chaque étape pour le repère vélo */
